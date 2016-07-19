@@ -3,7 +3,7 @@ package com.bigdlittled.barbara
 import org.scalameter.api._
 import breeze.linalg._
 
-class RunnerTest extends Bench.LocalTime {
+class RunnerTest extends Bench.OfflineReport {
   val sizes = Gen.range("size")(300000, 1500000, 300000)
 
   val ranges = for {
@@ -13,7 +13,7 @@ class RunnerTest extends Bench.LocalTime {
   performance of "DenseVector" in {
     measure method "reduce" in {
       using(ranges) in {
-        r => r.reduce(_ * 1 + _)
+        r => r.reduce(_ + _)
       }
     }
   }
@@ -24,4 +24,10 @@ class RunnerTest extends Bench.LocalTime {
       }
     }
   }
-}
+  performance of "DenseVector" in {
+    measure method "dotproduct" in {
+      using(ranges) in {
+        r => r dot r
+      }
+    }
+  }}

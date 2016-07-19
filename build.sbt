@@ -5,7 +5,8 @@ version := "1.0"
 scalaVersion := "2.11.7"
 
 libraryDependencies  ++= Seq(
-  "log4j" % "log4j" % "1.2.14",
+  "org.slf4j" % "slf4j-log4j12" % "1.7.21",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.4.0",
 
   "org.scalanlp" %% "breeze" % "0.12",
   "org.scalanlp" %% "breeze-natives" % "0.12",
@@ -20,3 +21,6 @@ resolvers += "Sonatype OSS Snapshots" at
 testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
 
 parallelExecution in Test := false
+
+fork in run := true
+
