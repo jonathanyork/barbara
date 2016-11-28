@@ -1,6 +1,7 @@
 package com.bigdlittled.barbara
 
 import breeze.linalg._
+import breeze.numerics._
 import org.scalameter.api._
 import com.typesafe.scalalogging._
 
@@ -15,8 +16,14 @@ object Runner extends App {
   logger.info("This is very convenient ;-)")
   logger.debug("This is a debug log!")
   
-  println("Sum: " + sum(dv)).toString()
+  println("Sum: " + sum(dv))
+  
+  println("Reduce: " + dv.reduce(_ + _))
 
-  println("Reduce: " + dv.reduce(_ + _)).toString()
+  println("Dot: " + (dv dot dv))
+  println("Add: " + (dv + dv))
+  
+  println("Accumulate: " + accumulate(dv))
+  println("Geometric Accumulate: " + exp(accumulate(log(dv))))
 
 }

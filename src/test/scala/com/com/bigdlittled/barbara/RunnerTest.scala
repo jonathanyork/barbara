@@ -16,18 +16,25 @@ class RunnerTest extends Bench.OfflineReport {
         r => r.reduce(_ + _)
       }
     }
-  }
-  performance of "DenseVector" in {
     measure method "sum" in {
       using(ranges) in {
         r => sum(r)
       }
     }
-  }
-  performance of "DenseVector" in {
     measure method "dotproduct" in {
       using(ranges) in {
         r => r dot r
       }
     }
-  }}
+    measure method "add" in {
+      using(ranges) in {
+        r => r + r
+      }
+    }
+    measure method "accumulate" in {
+      using(ranges) in {
+        r => accumulate(r)
+      }
+    }
+  }
+}
