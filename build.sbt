@@ -2,7 +2,7 @@ name := "barbara"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 libraryDependencies  ++= Seq(
   "org.slf4j" % "slf4j-log4j12" % "1.7.21",
