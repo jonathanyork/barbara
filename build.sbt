@@ -4,6 +4,8 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
+addCompilerPlugin("org.scalamacros" %% "paradise" % "2.1.0" cross CrossVersion.full)
+
 libraryDependencies  ++= Seq(
   "org.slf4j" % "slf4j-log4j12" % "1.7.21",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.4.0",

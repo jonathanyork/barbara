@@ -7,6 +7,8 @@ import com.typesafe.scalalogging._
 
 import org.slf4j.LoggerFactory;
 
+import com.bigdlittled.barbara.functions._
+
 object Runner extends App {
 
   val logger = Logger(LoggerFactory.getLogger("com.bigdlittled.barbara"))
@@ -20,6 +22,10 @@ object Runner extends App {
   
   println("Reduce: " + dv.reduce(_ + _))
 
+  println("Discount: " + discount(dv))
+
+  println("Present Value: " + pv(dv))
+    
   println("Dot: " + (dv dot dv))
   println("Add: " + (dv + dv))
   
